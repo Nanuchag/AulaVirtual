@@ -1,0 +1,42 @@
+{% extends "web/base.html" %}
+
+{% block titulo %} Listado de alumnos {% endblock %}
+
+{% block extra_css %}{% endblock %}
+
+
+{% block main %}
+
+<a href="{% url 'index' %}">Volver</a>
+
+<!--despliego de condicion-->
+
+{% if cuota_al_dia %}
+<p style="padding: 10px; background-color: cornflowerblue; color: white;">No debe dinero</p>
+{% else %}
+<p style="padding: 10px; background-color: sienna; color: white;">Debe la cuota</p>
+{% endif %}
+
+<!--despliego el listado con foreach-->
+
+<section>
+    {% for alumno in alumnos %}
+    <article>
+        <p>{{alumno | upper}}</p>
+    </article>
+
+
+    {% empty %}
+    <article>
+        <p>No hay alumnos cargados</p>
+    </article>
+    {% endfor %}
+
+</section>
+
+{% endblock %}
+
+
+
+
+
