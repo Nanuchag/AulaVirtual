@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.shortcuts import redirect
 import datetime
+from .forms import *
 
 # Create your views here.
 
@@ -38,3 +40,27 @@ def listado_alumnos(request):
       
 
      return render(request, 'web/listado_alumnos.html', context)
+
+def alta_alumno(request):
+
+     context = {}
+
+     if request.method == "GET":
+          context['alta_alumno_form'] = AltaAlumnoForm()
+     
+     else: # Asumo que es un POST 
+          context['alta_alumno_form'] = AltaAlumnoForm(request.POST)
+
+          # Validar el form
+
+          # Si el form es correcto
+          # Lo redirijo a una vista segura, for exemple el index
+
+          # Si el form es incorrecto
+          # Renderizo un form con mensajes de error
+
+          print(request.POST)
+
+          return redirect('index')
+     
+     return render(request, 'web/alta_alumno.html', context)

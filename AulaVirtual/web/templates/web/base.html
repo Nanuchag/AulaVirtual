@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula Virtual 2.0 - {% block titulo %}{% endblock %}</title>
 
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="{% static 'web/styles/base.css' %}">
 
     {% block extra_css %}{% endblock %}
 
@@ -17,14 +18,15 @@
     <nav>
         <li><a href="{% url 'index' %}">Index</a></li>
         <li ><a href="{% url 'listado_alumnos' %}">Listado de alumnos</a></li>
+        <li ><a href="{% url 'alta_alumno' %}">Alta alumno</a></li>
     </nav>
    
-    <main>
+    <main class="centered">
         {% block main %}{% endblock %}
     </main>
 
 
-    <footer>
+    <footer class="centered">
         <p>Codo a Codo 2024 - Todos los derechos reservados</p>
     </footer>
     

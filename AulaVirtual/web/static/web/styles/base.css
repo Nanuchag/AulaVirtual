@@ -1,0 +1,28 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header, main, footer {
+    padding: 15px;
+}
+
+header {
+    background-color: coral;
+}
+
+main {
+    flex: 1;
+    flex-direction: column;
+}
+
+footer {
+    background-color: crimson;
+}

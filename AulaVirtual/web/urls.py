@@ -6,5 +6,6 @@ urlpatterns = [
      #url parametrizadas
     path('saludar/<str:nombre>', views.saludar, name="saludar"),
     re_path('^alumnos_por_anio/(?P<year>[0-9]{4})/$', views.alumnos_por_año, name="alumnos_por_anio"),
-    path('listado_alumnos', views.listado_alumnos, name='listado_alumnos')
+    path('listado_alumnos', views.listado_alumnos, name='listado_alumnos'),
+    path('alta_alumno', views.alta_alumno, name='alta_alumno')
 ]
